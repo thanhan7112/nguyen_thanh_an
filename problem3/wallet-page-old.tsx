@@ -44,7 +44,6 @@ interface WalletBalance {
             const balancePriority = getPriority(balance.blockchain);
             
             // The variable lhsPriority is not declared in the function sortedBalances.
-
             // The logic if (lhsPriority > -99) { if (balance.amount <= 0) { return true; }} is not appropriate. 
             // Instead, it should use return balance.amount > 0 && balancePriority > -99.
             if (lhsPriority > -99) {
