@@ -8,3 +8,7 @@ You can run the command yarn start to start the project.
 ## Problem 3: Messy React
 Check the details inside the problem3 folder.
 Include 2 files: wallet-page-old.tsx (where I review your old code and comment on issues) and wallet-page-new.tsx (the new file I use to optimize your code).
+
+## Other blockchain-related projects
+https://github.com/thanhan7112/nft-marketplace
+https://github.com/thanhan7112/Marketplace
