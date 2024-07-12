@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import './styles/app.scss';
 import { TypeAccount, TypeToken, TypeTokenSelected } from './model/token';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
@@ -7,6 +6,7 @@ import Box from '@mui/material/Box';
 import { ethers } from 'ethers';
 import AlertComponent from './components/alert';
 import { NoBorderTextField, style } from './styles/style-mui';
+import './styles/app.scss';
 
 const listMaxSlippage = [0.05, 0.1, 0.5, 1]
 
