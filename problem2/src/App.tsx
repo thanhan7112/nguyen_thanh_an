@@ -39,7 +39,7 @@ function App() {
       try {
         const response = await fetch('https://interview.switcheo.com/prices.json');
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          setAlertMessage('Network response was not ok');
         }
         const data: TypeToken[] = await response.json();
         setListTokens(data);
