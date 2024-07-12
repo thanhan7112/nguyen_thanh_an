@@ -40,6 +40,7 @@ function App() {
         const response = await fetch('https://interview.switcheo.com/prices.json');
         if (!response.ok) {
           setAlertMessage('Network response was not ok');
+          setTimeout(() => setAlertMessage(null), 3000);
         }
         const data: TypeToken[] = await response.json();
         setListTokens(data);
