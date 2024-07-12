@@ -160,7 +160,7 @@ function App() {
               {filteredTokens.length > 0
                 ? <ul className='box-content'>
                   {filteredTokens.map((e) => {
-                    return <li className='token' onClick={() => {
+                    return <li className='token' key={e.currency} onClick={() => {
                       setTokenSelected((prev) => {
                         const { from, to } = prev;
 
