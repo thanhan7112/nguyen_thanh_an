@@ -35,34 +35,33 @@ function App() {
   const [isRotated, setIsRotated] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      await fetch('https://interview.switcheo.com/prices.json')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data: TypeToken[]) => {
-          setListTokens(data);
-          if (data.length > 1) {
-            setTokenSelected({
-              from: {
-                ...data[0],
-                amount: undefined
-              },
-              to: {
-                ...data[1],
-                amount: undefined
-              }
-            });
-          }
-        })
-        .catch((error) => {
-          setAlertMessage('Error fetching token data');
-          setTimeout(() => setAlertMessage(null), 3000);
-        });
-    })();
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://interview.switcheo.com/prices.json');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data: TypeToken[] = await response.json();
+        setListTokens(data);
+        if (data.length > 1) {
+          setTokenSelected({
+            from: {
+              ...data[0],
+              amount: undefined
+            },
+            to: {
+              ...data[1],
+              amount: undefined
+            }
+          });
+        }
+      } catch (error) {
+        setAlertMessage('Error fetching token data');
+        setTimeout(() => setAlertMessage(null), 3000);
+      }
+    };
+  
+    fetchData();
   }, []);
 
   const handleSwap = () => {
@@ -94,7 +93,6 @@ function App() {
     return listTokens.filter(token =>
       token.currency.toLowerCase().includes(searchToken.trim().toLowerCase())
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchToken, listTokens])
 
   const connectWallet = async () => {
