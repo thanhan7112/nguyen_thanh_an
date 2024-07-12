@@ -13,6 +13,8 @@ interface WalletBalance {
   interface Props extends BoxProps {
   
   }
+
+  // When you use React.FC<Props>, TypeScript will automatically know what props your component expects, so there's no need to specify them twice.
   const WalletPage: React.FC<Props> = (props: Props) => {
     const { children, ...rest } = props;
     const balances = useWalletBalances();
