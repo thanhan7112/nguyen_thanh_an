@@ -8,7 +8,7 @@ import AlertComponent from './components/alert';
 import { NoBorderTextField, style } from './styles/style-mui';
 import './styles/app.scss';
 
-const listMaxSlippage = [0.05, 0.1, 0.5, 1]
+const listMaxSlippage = [0.05, 0.1, 0.5, 1];
 
 function App() {
   const [listTokens, setListTokens] = useState<TypeToken[]>([]);
@@ -17,7 +17,7 @@ function App() {
   const [account, setAccount] = useState<TypeAccount | null>(null);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
   const [isMaxSlippage, setIsMaxSlippage] = useState(false);
-  const [slippageSelected, setSlippageSelected] = useState(0.05)
+  const [slippageSelected, setSlippageSelected] = useState(0.05);
   const [tokenSelected, setTokenSelected] = useState<TypeTokenSelected>({
     from: {
       currency: "USDC",
