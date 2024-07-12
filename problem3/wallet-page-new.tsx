@@ -19,8 +19,7 @@ const priorities: { [key: string]: number } = {
     Neo: 20,
 };
 
-const WalletPage: React.FC<Props> = (props: Props) => {
-    const { children, ...rest } = props;
+const WalletPage: React.FC<Props> = ({children, ...rest}: Props) => {
     const balances = useWalletBalances();
     const prices = usePrices();
 
